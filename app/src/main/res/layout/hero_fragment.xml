@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="heroViewModel"
+			type="com.example.migrationdeeplink.ui.main.HeroViewModel" />
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/hero_main_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:paddingStart="@dimen/hero_main_container_padding_start_end"
+		android:paddingEnd="@dimen/hero_main_container_padding_start_end"
+		tools:context=".ui.main.HeroFragment">
+
+		<TextView
+			android:id="@+id/hero_avatar_title"
+			style="@style/BlackBoldedTextStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/hero_avatar_title_margin_top"
+			android:text="@string/avatar_title"
+			app:layout_constraintEnd_toEndOf="@+id/hero_avatar_container"
+			app:layout_constraintStart_toStartOf="@+id/hero_avatar_container"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<FrameLayout
+			android:id="@+id/hero_avatar_container"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/hero_avatar_container_margin_top"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_avatar_title">
+
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:id="@+id/hero_avatar_iv"
+				android:layout_width="@dimen/hero_avatar_iv_width_height"
+				android:layout_height="@dimen/hero_avatar_iv_width_height"
+				android:background="@drawable/ic_black_frame_background"
+				android:onClick="@{() -> heroViewModel.changeHero()}"
+				android:padding="@dimen/hero_avatar_iv_padding"
+				android:scaleType="fitXY"
+				app:logo="@{heroViewModel.heroIcon}" />
+
+			<ImageView
+				android:id="@+id/hero_swap_img"
+				android:layout_width="@dimen/hero_swap_img_width_height"
+				android:layout_height="@dimen/hero_swap_img_width_height"
+				android:padding="@dimen/hero_swap_img_padding"
+				android:src="@drawable/ic_change_avatar"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:visibleGone="@{heroViewModel.haveFullStartingPoints}" />
+
+		</FrameLayout>
+
+		<TextView
+			android:id="@+id/hero_race"
+			style="@style/BlackBoldedTextStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/hero_race_margin_start"
+			android:text="@{heroViewModel.race}"
+			android:textSize="@dimen/hero_race_text_size"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_avatar_container"
+			app:layout_constraintStart_toEndOf="@+id/hero_avatar_container"
+			app:layout_constraintTop_toTopOf="@+id/hero_avatar_container"
+			tools:text="Human" />
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/hero_name"
+			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/hero_margin_top_20dp"
+			android:minWidth="@dimen/hero_name_min_width"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_avatar_container">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/hero_name_et"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text"
+				android:text="@={heroViewModel.userName}"
+				tools:text="Insane" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<TextView
+			android:id="@+id/hero_starting_points_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/hero_margin_top_20dp"
+			android:gravity="center"
+			android:text="@string/first_points_message"
+			android:textSize="@dimen/hero_starting_points_title_text_size"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_name"
+			tools:text="Hello Hero! This is your first starting points, so
+use them wisely.If you are sure that you have chosen your Hero, start adding your points." />
+
+		<LinearLayout
+			android:id="@+id/hero_starting_points_container"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/hero_margin_top_20dp"
+			android:background="@drawable/ic_black_frame_background"
+			android:orientation="horizontal"
+			android:padding="@dimen/hero_starting_points_container_padding"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_starting_points_title">
+
+			<TextView
+				android:id="@+id/hero_points_title"
+				style="@style/HeroPropertyTextStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="@string/points"
+				tools:text="Points: " />
+
+			<TextView
+				android:id="@+id/hero_points"
+				style="@style/HeroPropertyTextStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/hero_points_margin_start"
+				android:text="@{heroViewModel.startingPoints}"
+				tools:text="30" />
+
+		</LinearLayout>
+
+
+		<TextView
+			android:id="@+id/hero_strength_title"
+			style="@style/HeroPropertyTitleStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/strength"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_starting_points_container" />
+
+		<TextView
+			android:id="@+id/hero_strength"
+			style="@style/HeroPropertyStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@{heroViewModel.strength}"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_strength_title"
+			app:layout_constraintStart_toEndOf="@+id/hero_strength_title"
+			app:layout_constraintTop_toTopOf="@+id/hero_strength_title"
+			tools:text="100" />
+
+		<ImageButton
+			android:id="@+id/hero_strength_plus_btn"
+			style="@style/HeroPropertyTextStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:contentDescription="@null"
+			android:onClick="@{() -> heroViewModel.strengthIncrease()}"
+			android:text="@string/strength"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_strength"
+			app:layout_constraintStart_toEndOf="@+id/hero_strength"
+			app:layout_constraintTop_toTopOf="@+id/hero_strength" />
+
+		<TextView
+			android:id="@+id/hero_dexterity_title"
+			style="@style/HeroPropertyTitleStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/dexterity"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_strength_title" />
+
+		<TextView
+			android:id="@+id/hero_dexterity"
+			style="@style/HeroPropertyStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@{heroViewModel.dexterity}"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_dexterity_title"
+			app:layout_constraintStart_toEndOf="@+id/hero_dexterity_title"
+			app:layout_constraintTop_toTopOf="@+id/hero_dexterity_title"
+			tools:text="100" />
+
+		<ImageButton
+			android:id="@+id/hero_dexterity_plus_btn"
+			style="@style/HeroPropertyTextStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:contentDescription="@null"
+			android:onClick="@{() -> heroViewModel.dexterityIncrease()}"
+			android:text="@string/strength"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_dexterity"
+			app:layout_constraintStart_toEndOf="@+id/hero_dexterity"
+			app:layout_constraintTop_toTopOf="@+id/hero_dexterity" />
+
+		<TextView
+			android:id="@+id/hero_life_title"
+			style="@style/HeroPropertyTitleStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/life"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_dexterity_title" />
+
+		<TextView
+			android:id="@+id/hero_life"
+			style="@style/HeroPropertyStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@{heroViewModel.life}"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_life_title"
+			app:layout_constraintStart_toEndOf="@+id/hero_life_title"
+			app:layout_constraintTop_toTopOf="@+id/hero_life_title"
+			tools:text="500" />
+
+		<ImageButton
+			android:id="@+id/hero_life_plus_btn"
+			style="@style/HeroPropertyTextStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:contentDescription="@null"
+			android:onClick="@{() -> heroViewModel.lifeIncrease()}"
+			android:text="@string/strength"
+			app:layout_constraintBottom_toBottomOf="@+id/hero_life"
+			app:layout_constraintStart_toEndOf="@+id/hero_life"
+			app:layout_constraintTop_toTopOf="@+id/hero_life" />
+
+		<androidx.constraintlayout.widget.Group
+			android:id="@+id/hero_properties_visibility_group"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:constraint_referenced_ids="hero_dexterity_plus_btn,hero_strength_plus_btn,hero_life_plus_btn"
+			app:visibleGone="@{heroViewModel.haveStartingPoints}" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/hero_go_to_adventure_btn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/hero_margin_top_20dp"
+			android:gravity="center"
+			android:text="@string/go_to_adventure"
+			android:textSize="@dimen/hero_default_text_size"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/hero_life_title">
+
+		</com.google.android.material.button.MaterialButton>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

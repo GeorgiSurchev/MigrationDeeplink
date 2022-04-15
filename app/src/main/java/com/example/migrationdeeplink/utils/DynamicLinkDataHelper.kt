@@ -1,8 +1,9 @@
-package com.example.migrationdeeplink
+package com.example.migrationdeeplink.utils
 
 import android.net.Uri
 import android.util.Base64
 import android.util.Log
+import com.example.migrationdeeplink.ui.main.models.MigrationData
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.dynamiclinks.ktx.shortLinkAsync
 import com.google.firebase.ktx.Firebase
@@ -12,7 +13,7 @@ object DynamicLinkDataHelper {
 
 	private const val MIGRATION_DYNAMIC_LINK_PREFIX = "https://migrationdeeplink.page.link/?link="
 	private const val MIGRATION_DATA_KEY = "?migrationData="
-	private const val MIGRATION_DYNAMIC_LINK_SUFFIX = "&apn=com.example.migrationdeeplink"
+	private const val MIGRATION_DYNAMIC_LINK_SUFFIX = "&apn=com.example.migrationdeeplinkrecipient"
 	private const val MIGRATION_DEEPLINK_FALLBACK_URL = "https://www.google.com"
 
 	var migrationDynamicLink = ""
@@ -42,5 +43,4 @@ object DynamicLinkDataHelper {
 		MIGRATION_DYNAMIC_LINK_SUFFIX
 	).toString()
 
-	data class MigrationData(val name: String, val sureName: String, val email: String, val phone: String)
 }
