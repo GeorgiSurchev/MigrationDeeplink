@@ -78,6 +78,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="@dimen/hero_margin_top_20dp"
+			android:hint="@string/hero_name_hint"
 			android:minWidth="@dimen/hero_name_min_width"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0"
@@ -89,7 +90,8 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:inputType="text"
-				android:text="@={heroViewModel.userName}"
+				android:maxLength="24"
+				android:text="@={heroViewModel.characterName}"
 				tools:text="Insane" />
 
 		</com.google.android.material.textfield.TextInputLayout>
@@ -138,7 +140,6 @@ use them wisely.If you are sure that you have chosen your Hero, start adding you
 
 		</LinearLayout>
 
-
 		<TextView
 			android:id="@+id/hero_strength_title"
 			style="@style/HeroPropertyTitleStyle"
@@ -161,7 +162,7 @@ use them wisely.If you are sure that you have chosen your Hero, start adding you
 
 		<ImageButton
 			android:id="@+id/hero_strength_plus_btn"
-			style="@style/HeroPropertyTextStyle"
+			style="@style/HeroPropertyButtonPlusStyle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:contentDescription="@null"
@@ -193,7 +194,7 @@ use them wisely.If you are sure that you have chosen your Hero, start adding you
 
 		<ImageButton
 			android:id="@+id/hero_dexterity_plus_btn"
-			style="@style/HeroPropertyTextStyle"
+			style="@style/HeroPropertyButtonPlusStyle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:contentDescription="@null"
@@ -225,7 +226,7 @@ use them wisely.If you are sure that you have chosen your Hero, start adding you
 
 		<ImageButton
 			android:id="@+id/hero_life_plus_btn"
-			style="@style/HeroPropertyTextStyle"
+			style="@style/HeroPropertyButtonPlusStyle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:contentDescription="@null"

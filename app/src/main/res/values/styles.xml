@@ -13,12 +13,12 @@
 
 	<style name="HeroPropertyTextStyle" parent="BlackBoldedTextStyle">
 		<item name="android:textSize">@dimen/hero_default_text_size</item>
-		<item name="android:src">@drawable/ic_add_property</item>
-		<item name="android:backgroundTint">@color/white</item>
 	</style>
 
 	<style name="HeroPropertyButtonPlusStyle" parent="BlackBoldedTextStyle">
+		<item name="android:src">@drawable/ic_add_property</item>
 		<item name="android:textSize">@dimen/hero_default_text_size</item>
+		<item name="android:backgroundTint">@color/white</item>
 
 	</style>
 

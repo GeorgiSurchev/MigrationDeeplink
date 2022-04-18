@@ -7,5 +7,6 @@
 	<string name="first_points_message">Hello Hero! This is your first starting points, so
 use them wisely. If you are completely sure that you have chosen your Hero, start adding your points. </string>
 	<string name="points">Points: </string>
+	<string name="hero_name_hint">Character name </string>
 	<string name="go_to_adventure">Go to Adventure ! </string>
 </resources>

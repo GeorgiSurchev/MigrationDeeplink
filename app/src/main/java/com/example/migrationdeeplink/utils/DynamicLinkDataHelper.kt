@@ -11,10 +11,10 @@ import com.google.gson.Gson
 
 object DynamicLinkDataHelper {
 
-	private const val MIGRATION_DYNAMIC_LINK_PREFIX = "https://migrationdeeplink.page.link/?link="
-	private const val MIGRATION_DATA_KEY = "?migrationData="
-	private const val MIGRATION_DYNAMIC_LINK_SUFFIX = "&apn=com.example.migrationdeeplinkrecipient"
+	private const val MIGRATION_DYNAMIC_LINK_DOMAIN = "https://migrationdeeplinkrecipient.page.link/?link="
 	private const val MIGRATION_DEEPLINK_FALLBACK_URL = "https://www.google.com"
+	private const val MIGRATION_DATA_KEY = "?migrationData="
+	private const val MIGRATION_DYNAMIC_LINK_PACKAGE_NAME = "&apn=com.example.migrationdeeplinkrecipient"
 
 	var migrationDynamicLink = ""
 
@@ -32,7 +32,7 @@ object DynamicLinkDataHelper {
 	}
 
 	private fun createMigrationLink(encodedMigrationData: String) = StringBuilder().append(
-		MIGRATION_DYNAMIC_LINK_PREFIX
+		MIGRATION_DYNAMIC_LINK_DOMAIN
 	).append(
 		MIGRATION_DEEPLINK_FALLBACK_URL
 	).append(
@@ -40,7 +40,7 @@ object DynamicLinkDataHelper {
 	).append(
 		encodedMigrationData
 	).append(
-		MIGRATION_DYNAMIC_LINK_SUFFIX
+		MIGRATION_DYNAMIC_LINK_PACKAGE_NAME
 	).toString()
 
 }

@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
-import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
+
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -53,12 +52,15 @@ class HeroFragment : Fragment() {
 		}
 		viewModel.inputErrorToast.observe(viewLifecycleOwner) {
 			it?.let { message ->
-				Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+				Toast.makeText(context, message, Toast.LENGTH_LONG	).show()
 			}
 		}
 		binding.heroGoToAdventureBtn.setOnClickListener {
 			if (viewModel.haveAllData()) {
-				startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(migrationDynamicLink)))
+				val intent = Intent(Intent.ACTION_VIEW, Uri.parse(migrationDynamicLink)).apply {
+					flags = Intent.FLAG_ACTIVITY_NEW_TASK
+				}
+				startActivity(intent)
 			}
 		}
 	}

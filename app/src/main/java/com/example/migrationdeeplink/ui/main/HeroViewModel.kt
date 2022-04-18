@@ -20,8 +20,7 @@ private const val HERO_PROPERTY_POINT_STEP = 5
 
 class HeroViewModel : ViewModel() {
 
-	private var heroId = 0
-	val userName = MutableLiveData<String>()
+	val characterName = MutableLiveData<String>()
 	val heroIcon = MutableLiveData<String>()
 	val strength = MutableLiveData<String>()
 	val dexterity = MutableLiveData<String>()
@@ -42,7 +41,7 @@ class HeroViewModel : ViewModel() {
 	}
 
 	private val migrationDataTrigger: LiveData<Boolean> =
-		PairMediatorLiveData<Boolean, String>(haveStartingPoints, userName).switchMap { mediatorState ->
+		PairMediatorLiveData<Boolean, String>(haveStartingPoints, characterName).switchMap { mediatorState ->
 			val doNotHaveStartingPoints = mediatorState.first == false
 			val haveUserName = mediatorState.second.isNullOrBlank().not()
 
@@ -87,7 +86,7 @@ class HeroViewModel : ViewModel() {
 	}
 
 	init {
-		heroId = Hero.Human.id
+
 		heroIcon.value = Hero.Human.icon
 		strength.value = Hero.Human.strength
 		dexterity.value = Hero.Human.dexterity
@@ -99,7 +98,6 @@ class HeroViewModel : ViewModel() {
 	fun changeHero() {
 		if (haveFullStartingPoints()) {
 			val hero = getNextHeroByIcon(heroIcon.value)
-			heroId = hero?.id ?: 0
 			heroIcon.value = hero?.icon
 			strength.value = hero?.strength
 			dexterity.value = hero?.dexterity
@@ -109,19 +107,18 @@ class HeroViewModel : ViewModel() {
 	}
 
 	private fun setMigrationData(): MigrationData = MigrationData(
-		userName = userName.value.orEmpty(),
-		id = heroId,
+		characterName = characterName.value.orEmpty(),
+		race = race.value.orEmpty(),
 		strength = strength.value.orEmpty(),
 		dexterity = dexterity.value.orEmpty(),
 		life = life.value.orEmpty(),
-		characterName = heroIcon.value.orEmpty(),
-		race = race.value.orEmpty()
+		avatarIcon = heroIcon.value.orEmpty()
 	)
 
 	private fun verifyInputs(): Boolean {
 		_inputErrorToast.value = when {
 			haveStartingPoints.value == true -> SET_STARTING_POINTS_ERROR_TEXT
-			userName.value.isNullOrBlank() -> SET_USERNAME_ERROR_TEXT
+			characterName.value.isNullOrBlank() -> SET_USERNAME_ERROR_TEXT
 			else -> null
 		}
 		return inputErrorToast.value == null
