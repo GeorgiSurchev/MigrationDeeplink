@@ -41,9 +41,6 @@ class HeroFragment : Fragment() {
 		binding.heroNameEt.setOnActionDoneListener {
 			it.clearFocus()
 		}
-		binding.heroName.setEditTextFocusListener {
-
-		}
 	}
 
 	private fun addViewModelObservers() {
@@ -64,36 +61,4 @@ class HeroFragment : Fragment() {
 			}
 		}
 	}
-}
-
-/**
- * Focus listener that updates Input state when focus on the [EditText] field in [TextInputLayout] has changed.
- * By default when view gain focus it's state is cleared by setting it to [InputState.Neutral]
- *
- * @param onFocusGained function to do additional action when focus is passed to the view.
- * @param onFocusLost function to handle focus lost. Current input is provided as parameter
- *
- * @see [InputState]
- * @see [TextInputLayout]
- */
-fun TextInputLayout.setEditTextFocusListener(
-	processImage: Boolean = true,
-	onFocusGained: (() -> Unit)? = null,
-	onFocusLost: (String) -> Unit
-) {
-	editText?.onFocusChangeListener = View.OnFocusChangeListener { view, hasFocus ->
-		val editTextView = view as? EditText ?: return@OnFocusChangeListener
-		val input = editTextView.text?.toString().orEmpty()
-		if (hasFocus) {
-			editTextView.setSelection(input.length)
-			editTextView.showKeyboard()
-			onFocusGained?.invoke()
-		} else {
-			onFocusLost.invoke(input)
-		}
-	}
-}
-
-fun View.showKeyboard() {
-	context?.inputMethodManager?.showSoftInput(this, 0)
 }
