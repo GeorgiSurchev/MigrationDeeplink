@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">MigrationDeeplink</string>
+	<string name="app_name">Hero</string>
 	<string name="avatar_title">Chose your hero</string>
 	<string name="strength">Strength</string>
 	<string name="dexterity">Dexterity</string>

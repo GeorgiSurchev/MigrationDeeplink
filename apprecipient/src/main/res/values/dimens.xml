@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Hero Fragment -->
+	<dimen name="hero_main_container_padding_start_end">20dp</dimen>
+	<dimen name="hero_avatar_margin_top">30dp</dimen>
+	<dimen name="hero_avatar_iv_width_height">120dp</dimen>
+	<dimen name="hero_avatar_iv_padding">4dp</dimen>
+	<dimen name="hero_swap_img_width_height">30dp</dimen>
+	<dimen name="hero_swap_img_padding">5dp</dimen>
+	<dimen name="hero_margin_30dp">30dp</dimen>
+	<dimen name="hero_race_text_size">40sp</dimen>
+	<dimen name="hero_margin_top_20dp">20dp</dimen>
+	<dimen name="hero_property_margin_top">10dp</dimen>
+	<dimen name="hero_name_min_width">200dp</dimen>
+	<dimen name="hero_name_text_size">18sp</dimen>
+	<dimen name="hero_default_text_size">22sp</dimen>
+	<dimen name="hero_starting_points_title_text_size">16sp</dimen>
+	<dimen name="hero_starting_points_container_padding">10dp</dimen>
+	<dimen name="hero_property_padding_start_end">4dp</dimen>
+	<dimen name="hero_property_margin_start">8dp</dimen>
+	<dimen name="hero_points_margin_start">6dp</dimen>
+	<dimen name="hero_name_container_padding">8dp</dimen>
+	<dimen name="hero_properties_container_padding">8dp</dimen>
+	<dimen name="hero_properties_container_padding_bottom">16dp</dimen>
+	<dimen name="hero_properties_title_margin_top">6dp</dimen>
+	<dimen name="hero_race_margin_end">6dp</dimen>
+</resources>
