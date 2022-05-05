@@ -1,9 +1,9 @@
 <resources>
 	<string name="app_name">Hero Adventure</string>
 	<string name="avatar_title">Chose your hero</string>
-	<string name="strength">Strength</string>
-	<string name="dexterity">Dexterity</string>
-	<string name="life">Life</string>
+	<string name="strength">Strength:</string>
+	<string name="dexterity">Dexterity:</string>
+	<string name="life">Life:</string>
 	<string name="character_name">Character name :</string>
 	<string name="properties_title">Properties :</string>
 </resources>

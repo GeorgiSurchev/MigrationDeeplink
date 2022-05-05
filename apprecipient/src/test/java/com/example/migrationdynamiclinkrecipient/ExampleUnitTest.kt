@@ -1,4 +1,4 @@
-package com.example.migrationdeeplink
+package com.example.migrationdynamiclinkrecipient
 
 import org.junit.Test
 

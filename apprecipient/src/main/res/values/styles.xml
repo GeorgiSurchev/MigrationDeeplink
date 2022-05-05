@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="HeroPropertyStyle" parent="HeroPropertyTextStyle">
-		<item name="android:background">@drawable/ic_black_frame_background</item>
 		<item name="android:layout_marginStart">@dimen/hero_property_margin_start</item>
 		<item name="android:paddingStart">@dimen/hero_property_padding_start_end</item>
 		<item name="android:paddingEnd">@dimen/hero_property_padding_start_end</item>

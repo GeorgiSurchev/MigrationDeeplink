@@ -1,4 +1,4 @@
-package com.example.migrationdeeplinkrecipient
+package com.example.migrationdynamiclinkrecipient
 
 import android.content.ContentValues
 import android.content.Intent
@@ -8,8 +8,8 @@ import android.os.Bundle
 import android.util.Base64
 import android.util.Log
 import androidx.core.os.bundleOf
-import com.example.migrationdeeplinkrecipient.ui.main.HeroFragment
-import com.example.migrationdeeplinkrecipient.ui.main.model.MigrationData
+import com.example.migrationdynamiclinkrecipient.ui.main.HeroFragment
+import com.example.migrationdynamiclinkrecipient.ui.main.model.MigrationData
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData
 import com.google.gson.Gson

@@ -16,7 +16,7 @@
 	<dimen name="hero_default_text_size">22sp</dimen>
 	<dimen name="hero_starting_points_title_text_size">16sp</dimen>
 	<dimen name="hero_starting_points_container_padding">10dp</dimen>
-	<dimen name="hero_property_padding_start_end">4dp</dimen>
+	<dimen name="hero_property_padding_start_end">6dp</dimen>
 	<dimen name="hero_property_margin_start">8dp</dimen>
 	<dimen name="hero_points_margin_start">6dp</dimen>
 	<dimen name="hero_name_container_padding">8dp</dimen>

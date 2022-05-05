@@ -1,8 +1,8 @@
-package com.example.migrationdeeplinkrecipient.ui.main
+package com.example.migrationdynamiclinkrecipient.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.migrationdeeplinkrecipient.ui.main.model.MigrationData
+import com.example.migrationdynamiclinkrecipient.ui.main.model.MigrationData
 
 private const val DEFAULT_CHARACTER_NAME = "Lord Voldemort"
 private const val DEFAULT_RACE = "Dark Wizard"

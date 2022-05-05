@@ -1,4 +1,4 @@
-package com.example.migrationdeeplink
+package com.example.migrationdynamiclink
 
 import android.graphics.Rect
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.migrationdeeplink.ui.main.HeroFragment
-import com.example.migrationdeeplink.utils.hideKeyboard
+import com.example.migrationdynamiclink.ui.main.HeroFragment
+import com.example.migrationdynamiclink.utils.hideKeyboard
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.migrationdeeplink.utils
+package com.example.migrationdynamiclink.utils
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData

@@ -1,4 +1,6 @@
-package com.example.migrationdeeplink.ui.main.models
+package com.example.migrationdynamiclinkrecipient.ui.main.model
+
+import java.io.Serializable
 
 data class MigrationData(
 	val characterName: String,
@@ -7,4 +9,4 @@ data class MigrationData(
 	val dexterity: String,
 	val life: String,
 	val avatarIcon: String
-)
+):Serializable

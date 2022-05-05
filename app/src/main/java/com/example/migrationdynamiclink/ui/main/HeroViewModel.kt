@@ -1,4 +1,4 @@
-package com.example.migrationdeeplink.ui.main
+package com.example.migrationdynamiclink.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,11 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import androidx.lifecycle.switchMap
-import com.example.migrationdeeplink.ui.main.models.Hero
-import com.example.migrationdeeplink.utils.DynamicLinkDataHelper
-import com.example.migrationdeeplink.ui.main.models.Hero.Companion.getNextHeroByIcon
-import com.example.migrationdeeplink.ui.main.models.MigrationData
-import com.example.migrationdeeplink.utils.PairMediatorLiveData
+import com.example.migrationdynamiclink.ui.main.models.Hero
+import com.example.migrationdynamiclink.utils.DynamicLinkDataHelper
+import com.example.migrationdynamiclink.ui.main.models.Hero.Companion.getNextHeroByIcon
+import com.example.migrationdynamiclink.ui.main.models.MigrationData
+import com.example.migrationdynamiclink.utils.PairMediatorLiveData
 
 private const val DEFAULT_STARTING_PINTS = "100"
 private const val ZERO_POINTS = "0"

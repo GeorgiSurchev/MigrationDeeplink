@@ -1,11 +1,6 @@
-package com.example.migrationdeeplink.utils
+package com.example.migrationdynamiclinkrecipient.ui.main
 
-import android.content.Context
 import android.graphics.drawable.Drawable
-import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -16,17 +11,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 
 private const val GLIDE_REQUEST_TIMEOUT = 10000
-
-val Context.inputMethodManager: InputMethodManager?
-	get() = applicationContext.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-
-fun View.hideKeyboard(keepFocus: Boolean = false) {
-	if (keepFocus.not()) {
-		clearFocus()
-	}
-
-	context?.inputMethodManager?.hideSoftInputFromWindow(applicationWindowToken, 0)
-}
 
 @BindingAdapter("logo")
 fun ImageView.setLogo(url: String?) {
@@ -69,25 +53,4 @@ fun loadImage(
 			return false
 		}
 	}).into(targetView)
-}
-
-@BindingAdapter("visibleGone")
-fun View.showHide(show: Boolean) {
-	visibility = if (show) View.VISIBLE else View.GONE
-}
-
-/**
- * Set a callback for when actionDone is performed from the soft keyboard.
- *
- * @param action the callback to be invoked when actionDone is performed.
- */
-fun EditText.setOnActionDoneListener(action: (view: View) -> Unit) {
-	setOnEditorActionListener { view, actionId, _ ->
-		if (actionId == EditorInfo.IME_ACTION_DONE) {
-			view?.hideKeyboard(keepFocus = true)
-			action(view)
-			return@setOnEditorActionListener true
-		}
-		false
-	}
 }

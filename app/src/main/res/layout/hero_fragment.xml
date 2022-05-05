@@ -7,7 +7,7 @@
 
 		<variable
 			name="heroViewModel"
-			type="com.example.migrationdeeplink.ui.main.HeroViewModel" />
+			type="com.example.migrationdynamiclink.ui.main.HeroViewModel" />
 	</data>
 
 	<androidx.constraintlayout.widget.ConstraintLayout

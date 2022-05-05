@@ -1,4 +1,4 @@
-package com.example.migrationdeeplinkrecipient.ui.main
+package com.example.migrationdynamiclinkrecipient.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.migrationdeeplinkrecipient.MIGRATION_DATA_KEY
-import com.example.migrationdeeplinkrecipient.R
-import com.example.migrationdeeplinkrecipient.databinding.HeroFragmentBinding
-import com.example.migrationdeeplinkrecipient.ui.main.model.MigrationData
+import com.example.migrationdynamiclinkrecipient.MIGRATION_DATA_KEY
+import com.example.migrationdynamiclinkrecipient.R
+import com.example.migrationdynamiclinkrecipient.databinding.HeroFragmentBinding
+import com.example.migrationdynamiclinkrecipient.ui.main.model.MigrationData
 
 class HeroFragment : Fragment() {
 

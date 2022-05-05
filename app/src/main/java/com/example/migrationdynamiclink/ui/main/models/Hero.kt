@@ -1,4 +1,4 @@
-package com.example.migrationdeeplink.ui.main.models
+package com.example.migrationdynamiclink.ui.main.models
 
 enum class Hero(val id: Int, val strength: String, val dexterity: String, val life: String, val icon: String) {
 	Human(
