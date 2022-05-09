@@ -14,7 +14,7 @@ object DynamicLinkDataHelper {
 	private const val MIGRATION_DYNAMIC_LINK_DOMAIN = "https://dynamiclinkrecipient.page.link/?link="
 	private const val MIGRATION_DEEPLINK_FALLBACK_URL = "https://www.google.com"
 	private const val MIGRATION_DATA_KEY = "?migrationData="
-	private const val MIGRATION_DYNAMIC_LINK_PACKAGE_NAME = "&apn=com.example.migrationdynamiclinkrecipient"
+	private const val MIGRATION_DYNAMIC_LINK_TARGET_PACKAGE_NAME = "&apn=com.example.migrationdynamiclinkrecipient"
 
 	var migrationDynamicLink = ""
 
@@ -40,7 +40,7 @@ object DynamicLinkDataHelper {
 	).append(
 		encodedMigrationData
 	).append(
-		MIGRATION_DYNAMIC_LINK_PACKAGE_NAME
+		MIGRATION_DYNAMIC_LINK_TARGET_PACKAGE_NAME
 	).toString()
 
 }
