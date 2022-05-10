@@ -1,6 +1,7 @@
 package com.example.migrationdynamiclink.ui.main.models
 
 enum class Hero(val id: Int, val strength: String, val dexterity: String, val life: String, val icon: String) {
+
 	Human(
 		1,
 		strength = "100",

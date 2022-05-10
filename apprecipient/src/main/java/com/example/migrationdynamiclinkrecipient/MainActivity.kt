@@ -46,9 +46,7 @@ class MainActivity : AppCompatActivity() {
 					}
 				}
 
-				result.isFailure -> {
-					Log.e(DYNAMIC_LINKS_TAG, "Unable to process External link")
-				}
+				result.isFailure -> Log.e(DYNAMIC_LINKS_TAG, "Unable to process External link")
 			}
 		}
 	}

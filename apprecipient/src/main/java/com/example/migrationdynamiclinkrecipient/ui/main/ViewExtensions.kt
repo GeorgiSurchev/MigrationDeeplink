@@ -14,9 +14,7 @@ private const val GLIDE_REQUEST_TIMEOUT = 10000
 
 @BindingAdapter("logo")
 fun ImageView.setLogo(url: String?) {
-	url?.let {
-		loadImage(this, url.orEmpty())
-	}
+	url?.let { loadImage(this, url.orEmpty()) }
 }
 
 /**

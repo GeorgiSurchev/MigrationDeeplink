@@ -86,7 +86,6 @@ class HeroViewModel : ViewModel() {
 	}
 
 	init {
-
 		heroIcon.value = Hero.Human.icon
 		strength.value = Hero.Human.strength
 		dexterity.value = Hero.Human.dexterity
