@@ -10,7 +10,7 @@ All entered data will be migrated to the MigrationDynamicLinkRecipient (**Hero A
 ## First steps:
 
 - **Create firebase account:** https://firebase.google.com/
-- **Create project:** Fallow the steps.
+- **Create project:** Follow the steps.
 - **Go to Dynamic Links section and click  Get Started (<a href ="https://firebase.google.com/docs/dynamic-links/?authuser=0#implementation_paths">documentation</a>):**
 
 add your domain here (in my app is https://dynamiclinkrecipient.page.link) :
@@ -22,17 +22,17 @@ add your domain here (in my app is https://dynamiclinkrecipient.page.link) :
 
 **Go to Project Overview and click Project Settings:**
 
-Fallow the steps.
+Follow the steps.
 
 ![2](https://user-images.githubusercontent.com/54105945/163983144-7eedf911-804d-40f2-a0c0-9d727158bec8.png)
 
-**Note: You must add both applications to the firebase**
+**Note: You must add both applications to the firebase.**
 
 ## Dynamic link creation Instructions (<a href ="https://firebase.google.com/docs/dynamic-links/create-links?authuser=0">documentation</a>):
 
 **In Migration Dynamic Link app (Hero) go to DynamicLinkDataHelper.**
 
-**When creating the dynamic link prefix, you must add the same domain that you created in firebase. Also we need to add the package name to the app we are going to target. We will do this when we add the dynamic link affix :**
+**When creating the dynamic link prefix, we must add the same domain that you created in firebase. Also we need to add the package name to the app we are going to target. We will do this when we add the dynamic link affix :**
 
   ```
 	private const val MIGRATION_DYNAMIC_LINK_DOMAIN = "https://dynamiclinkrecipient.page.link/?link="
@@ -75,7 +75,7 @@ Fallow the steps.
 
 ## Migrate Data to Another App
 
-**When we have all data that we needed to start an Intent that contains our dynamic link :**
+**When we have all the necessary data, we launch an Intent that contains our dynamic link :**
 
 ```
 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(migrationDynamicLink)).apply {
@@ -86,15 +86,15 @@ startActivity(intent)
 
 ## What happent next?
 
-- **When intent is passet and we have the target app installed a window is shown whith options to chose :**
+- **When Intent is passed and we have the target application (Hero Adventure) installed a window pops up with options to choose from :**
 
 ![5](https://user-images.githubusercontent.com/54105945/164187046-cc30655d-e868-4148-ba11-32340c1eedff.png)
 
-When open* the app we will see all migrated data.
+When we open* the app we should see the data migrated.
 
-- **If we don't have app installed we will redirectet do Google Play Store from where to install the target application.**
+- **If we don’t have the app installed, we will be redirected to Google Play Store, where we can install the target application (Hero Adventure).**
 
-When the application is installed*  we will see all migrated data.
+When the application is installed* should see the data migrated.
 
 *receive Intent arguments from migration dynamic link app (Hero) in the Main activity.
 
@@ -123,7 +123,7 @@ When the application is installed*  we will see all migrated data.
 
 - **Dynamic link handling**
 
-In Activity "**OnCreate**" we catch the dynamic link Intent then we procces with handling :
+In Activity "**OnCreate**" we catch the dynamic link Intent, then we procces with handling :
 
 ```
    /**
@@ -150,7 +150,7 @@ In Activity "**OnCreate**" we catch the dynamic link Intent then we procces with
   
 ```
   
-**If the result is succseed and our Dynamic Link contains the exact key we can decode them :**
+**If the result succeeds and our Dynamic Link contains the exact key we can decode them :**
 
 ```
 
@@ -181,9 +181,5 @@ In Activity "**OnCreate**" we catch the dynamic link Intent then we procces with
 
 ```
 
-**That's all, i wish you a successful migration!**
-
-        
-        
-
-	
+**That's all, I wish you successful migrating!**
+             
