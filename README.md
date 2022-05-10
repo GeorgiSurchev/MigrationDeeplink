@@ -59,7 +59,15 @@ Follow the steps.
   
   **This is an example of full dynamic link structore :**
   
+https://dynamiclinkrecipient.page.link/?link=https://www.google.com?migrationData=eyJhdmF0YXJJY29uIjoiaHR0cHM6Ly9pY29uLWxpYnJhcnkuY29tL2ltYWdlcy9vcmMtaWNvbi9vcmMtaWNvbi0xOC5qcGciLCJjaGFyYWN0ZXJOYW1lIjoiRHVyb3RhbiIsImRleHRlcml0eSI6IjkwIiwibGlmZSI6IjYwMCIsInJhY2UiOiJPcmMiLCJzdHJlbmd0aCI6IjIxMCJ9&apn=com.example.migrationdynamiclinkrecipient
+  
   ```
+  	
+	private const val MIGRATION_DYNAMIC_LINK_DOMAIN = "https://dynamiclinkrecipient.page.link/?link="
+	private const val MIGRATION_DEEPLINK_FALLBACK_URL = "https://www.google.com"
+	private const val MIGRATION_DATA_KEY = "?migrationData="
+	private const val MIGRATION_DYNAMIC_LINK_TARGET_PACKAGE_NAME = "&apn=com.example.migrationdynamiclinkrecipient"
+  
 	private fun createMigrationLink(encodedMigrationData: String) = StringBuilder().append(
 		MIGRATION_DYNAMIC_LINK_DOMAIN
 	).append(
